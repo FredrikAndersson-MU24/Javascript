@@ -18,14 +18,14 @@
 
 // // Skriv en funktion som tar en sträng och ett tecken som input och ger true eller false som output beroende på om tecknet finns i strängen.
 
-// function containsChar(text, character) {
-//   for (let char of text) {
-//     if (char == character) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
+function containsChar(text, character) {
+  for (let char of text) {
+    if (char == character) {
+      return true;
+    }
+  }
+  return false;
+}
 // const str1 = "Vi ska ro hem nu";
 // const char1 = "o";
 // console.log(containsChar("hej", "e"));
@@ -205,3 +205,45 @@ console.log(replace(str100, char100, char200)); // => "Hail world"
 console.log(replace(str100, "world", "Sponge-Bob")); // =>  "Hello Sponge-Bob"
 
 console.log("-----");
+
+// encrypt
+// Skriv en funktion som gör om en sträng till rövarspråket
+
+function encrypt(text) {
+  const consonants = "bcdfghjklmnpqrstvwxz";
+  const consonantsUpperCase = "BCDFGHJKLMNPQRSTVWXZ";
+  let newerString = "";
+  for (const char of text) {
+    if (containsChar(consonants, char)) {
+      newerString += char + "o" + char;
+    } else if (containsChar(consonantsUpperCase, char)) {
+      newerString += char + "O" + char;
+    } else {
+      newerString += char;
+    }
+  }
+  return newerString;
+}
+
+let str1000 = "hej på dig";
+console.log(encrypt(str1000)); // => "hohejoj popå dodigog"
+console.log("-----");
+
+// decrypt
+// Skriv en funktion som gör om en sträng från rövarspråket till vanligt
+//Funktionen kollar om varje tecken finns med bland konsonantern. Finns tecknet med så läggs 2 till på index-variabeln för att hoppa över o:et och den extra konsonanten.
+
+function decrypt(text) {
+  const consonants = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
+  let newerString = "";
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (containsChar(consonants, char)) {
+      /*om tecknet är en konsonant...*/ i += 2; //...lägg till två på i för att hoppa över o:et och den extra konsonanten.
+    }
+    newerString += char;
+  }
+  return newerString;
+}
+let text = "totitottota";
+console.log(decrypt(text)); // => "hej på dig"
