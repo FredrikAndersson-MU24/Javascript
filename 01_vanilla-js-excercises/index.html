@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>01_vanilla-js-excercises</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ol>
+        <h2>Datatyper</h2>
+        <li>
+          <section>
+            <p>Vilka datatyper finns det i JS? Svara i form av en array.</p>
+            <br />
+            <code
+              >let datatypes = ["String", "Number", "Bigint", "Boolean",
+              "Undefined", "Null", "Symbol", "Object"]</code
+            >
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Är följande if sats true eller false?</p>
+            <br />
+            <code>
+              let a = 1; <br />let b = '1'; <br />if(a == b) // true or false
+            </code>
+            <section><strong>true</strong></section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>
+              Vad är den tekniska skillnaden ( förutom var, let ) på dessa två
+              deklarationer?
+            </p>
+            <br />
+            <code>
+              let name = 'Greta Thunberg';<br />
+              var name = 'Greta Thunberg';</code
+            >
+            <ul>
+              <li>
+                <p>
+                  let = re-assignable, block-scoped local variables. Cannot be
+                  redeclared. Can only be accessed after the place of
+                  declaration is reached (non-hoistable).
+                </p>
+              </li>
+              <li>
+                <p>
+                  var = function-scoped or globally-scoped. Can be redeclared.
+                </p>
+              </li>
+            </ul>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Hur tar man reda på vad en variabel har för datatyp?</p>
+            <br />
+            <section>
+              <p>Med typeof operatorn. T ex</p>
+              <code>
+                var name = 'Greta Thunberg';<br />
+                console.log(typeof name); // string <br />
+                var num = 10; <br />
+                console.log(typeof num); //number</code
+              >
+            </section>
+          </section>
+        </li>
+        <h2>Block</h2>
+        <li>
+          <section>
+            <p>Vilken av följande tecken visar ett kodblock?</p>
+            <br />
+            <code
+              >[] // A <br />
+              () // B <br />
+              {} // C</code
+            >
+            <section>
+              <p>C</p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Vad i följande kod är blocket som exekveras?</p>
+            <br />
+            <code>el.on('click', () => { alert('Ariba!'); })</code>
+            <br />
+            <code>{ alert('Ariba!'); }</code>
+            <section>
+              <p></p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Vad kommer stå i console.log()?</p>
+            <br />
+            <code
+              >var greeting = 'Good bye world!'; <br />{ <br />let greeting =
+              'Hello World';<br />
+              } <br />console.log(greeting);</code
+            >
+            <section>
+              <p>Hello world! (var can be redeclared)</p>
+            </section>
+          </section>
+        </li>
+        <h2>Strings</h2>
+        <li>
+          <section>
+            <p>
+              Vilken av följande syntax är korrekt sätt att skriva strängar.
+            </p>
+            <br />
+            <code
+              >"Hello World" // A <br />
+              'Hello World' // B <br />
+              `Hello World` // C</code
+            >
+            <section>
+              <p>Alla tre.</p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Räkna antal tecken i strängen nedan.</p>
+            <br />
+            <code
+              >let sentence = "If you're having code problems I feel bad for you
+              son. I got 99 problems, but a glitch ain't one."</code
+            >
+            <br />
+            <code> console.log(sentence.length) </code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Gör en template string där N ersätts med variabeln name.</p>
+            <br />
+            <code
+              >let name = 'Ditt namn' <br />
+              `Hej N din gamle knasboll!`</code
+            >
+            <br />
+            <code>let templateString = `Hej ${name} din gamle knasboll!`</code>
+          </section>
+        </li>
+        <h2>Arrays</h2>
+        <li>
+          <section>
+            <p>Gör en array med fem frukter.</p>
+            <br />
+            <code
+              >let fruits = ["apple", "banana", "cantaloupe", "pineapple",
+              "lemon"]</code
+            >
+            <section>
+              <p></p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Lägg till en frukt i början och en frukt i slutet på arrayen.</p>
+            <br />
+            <code>
+              fruits.push("watermelon"); <br />
+              fruits.unshift("pear");
+            </code>
+            <section>
+              <p></p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>
+              I ovanstående fruktarray, plocka bort första och sista frukten.
+            </p>
+            <br />
+            <code>
+              fruits.shift(); <br />
+              fruits.pop();
+            </code>
+            <section>
+              <p></p>
+            </section>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>I följande array, sätt in två nya frukter på index 2.</p>
+            <br />
+            <code>let fruits = ['apple', 'orange', 'pear', 'kiwi']</code>
+            <br />
+            <code>fruit.splice(2, 0, "melon", "banana");</code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Klona följande array och ändra första frukten till pineapple.</p>
+            <br />
+            <code>let fruits = ['apple', 'orange', 'pear', 'kiwi']</code>
+            <br />
+            <code>let newFruits = fruits.toSpliced(0, 1, "pineapple");</code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Sortera följande array i fallande ordning.</p>
+            <br />
+            <code>let num = [1,5,78,7,122,3,4,65,40,2,8]</code>
+            <br />
+            <code> num.sort((a, b) => b - a); </code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>Lägg ihop följande arrayer.</p>
+            <br />
+            <code
+              >let a = [1,2,3]; <br />
+              let b = [4,5,6];</code
+            >
+            <br />
+            <code>let c = a.concat(b);</code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p>
+              Mixa följande arrayer där varannan är från array a och varanan
+              från array b.
+            </p>
+            <br />
+            <code
+              >let a = ['My', 'has', 'many', 'open']; <br />
+              let b = ['brain', 'to', 'tabs', '!'];</code
+            >
+            <br />
+            <code> </code>
+          </section>
+        </li>
+        <li>
+          <section>
+            <p></p>
+            <br />
+            <code></code>
+            <section>
+              <p></p>
+            </section>
+          </section>
+        </li>
+      </ol>
+    </div>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
